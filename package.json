@@ -1,0 +1,16 @@
+{
+    "name": "hello-world",
+    "version": "0.0.1",
+    "description": "Getting started NodeJS and Redis",
+    "license": "MIT",
+    "engines": {
+        "node": ">= 0.10.0"
+    },
+    "main": "main.js",
+    "scripts": {
+        "start": "node main.js"
+    },
+    "dependencies": {
+      "redis": "*"
+  }
+}
