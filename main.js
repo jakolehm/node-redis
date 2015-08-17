@@ -1,6 +1,6 @@
 var http = require('http');
 var port = process.env.PORT || 8080; // use value from environment variable or 8080 if not set
-var redisHost = process.env.REDIS_HOSTNAME || 'redis'
+var redisHost = 'redis'
 var redisPort = process.env.REDIS_PORT || 6379
 
 console.log("Connecting to Redis@" + redisHost + ":" + redisPort);
