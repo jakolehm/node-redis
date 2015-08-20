@@ -1,6 +1,6 @@
 node-redis:
     image: registry.kontena.local/node-redis:latest
-    instances: 1
+    instances: 2
     stateful: false
     ports:
       - 8888:8080
