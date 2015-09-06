@@ -11,7 +11,7 @@ var r = redis.createClient(redisPort, redisHost); //creates a new client
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
   r.incr('counter', function(err, reply) {
-      res.write('Hello World, I am v4 of the app! I have been invoked ' + reply + ' times! (This includes my predecessors also :D)\n');
+      res.write('Hello World, I am v1 of the app! I have been invoked ' + reply + ' times! (This includes my predecessors also :D)\n');
       res.end();
   });
 
