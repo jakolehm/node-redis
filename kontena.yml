@@ -1,12 +1,19 @@
-node-redis:
-    image: registry.kontena.local/node-redis:latest
-    instances: 2
-    stateful: false
-    ports:
-      - 8888:8080
-    volume:
-      - /var/run/docker.sock:/var/run/docker.sock
+lb:
+  image: kontena/lb:latest
+  instances: 2
+  stateful: false
+  ports:
+    - 80:80
+app:
+  image: registry.kontena.local/node-redis:latest
+  instances: 2
+  stateful: false
+  environment:
+    - KONTENA_LB_INTERNAL_PORT=8080
+    - REDIS_HOST=node-redis-redis.kontena.local
+  links:
+    - lb
 redis:
-  image: redis
+  image: redis:latest
   stateful: true
   instances: 1
